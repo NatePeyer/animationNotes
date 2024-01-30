@@ -66,6 +66,16 @@ public class Ball {
             ySpeed += (int)(Math.random() * 3 - 1);
         }
     }
+
+    public int getX()
+    {
+        return x;
+    }
+
+    public int getY()
+    {
+        return y;
+    }
     private Color randomColor()
     {
         int ranNum = (int)(Math.random()*13);

@@ -38,25 +38,25 @@ public class MyPanel extends JPanel
           myBalls[i].moveBalls(this);
       }
       //g.drawString("hello world", 215,250);
-      xloc+= xVel;
-      yloc+= 2;
-
-      if(xloc > 450)
-      {
-          xVel = xVel * -1;
-      }
-      else if(xloc < 0)
-      {
-          xVel = xVel * -1;
-      }
-      if(yloc > (getHeight() -100))
-      {
-          yVel *= -1;
-      }
-      if(yloc < 0)
-      {
-          yVel *= -1;
-      }
+//      xloc+= xVel;
+//      yloc+= 2;
+//
+//      if(xloc > 450)
+//      {
+//          xVel = xVel * -1;
+//      }
+//      else if(xloc < 0)
+//      {
+//          xVel = xVel * -1;
+//      }
+//      if(yloc > (getHeight() -100))
+//      {
+//          yVel *= -1;
+//      }
+//      if(yloc < 0)
+//      {
+//          yVel *= -1;
+     // }
 
       // code for track on screen
 //      g.setColor(Color.BLACK);
