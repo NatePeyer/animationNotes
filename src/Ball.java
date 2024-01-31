@@ -65,6 +65,11 @@ public class Ball {
             ySpeed *= -1;
             ySpeed += (int)(Math.random() * 3 - 1);
         }
+        if ((y > panel.getHeight() || y < 0) || (x > panel.getWidth() || x < 0))
+        {
+            x = (int)(Math.random() * panel.getWidth());
+            y = (int)(Math.random() * panel.getHeight());
+        }
     }
 
     public int getX()
@@ -75,6 +80,11 @@ public class Ball {
     public int getY()
     {
         return y;
+    }
+    public void bounceOff()
+    {
+        xSpeed *= -1;
+        ySpeed *= -1;
     }
     private Color randomColor()
     {

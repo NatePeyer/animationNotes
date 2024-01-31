@@ -37,6 +37,18 @@ public class MyPanel extends JPanel
       {
           myBalls[i].moveBalls(this);
       }
+
+      for(int i = 0 ; i < myBalls.length; i++)
+      {
+          for(int j = 0; j < myBalls.length; j++)
+          {
+              if((myBalls[i].getX() == myBalls[j].getX()) && (myBalls[i].getY() == myBalls[j].getY()))
+              {
+                  myBalls[i].bounceOff();
+                  myBalls[j].bounceOff();
+              }
+          }
+      }
       //g.drawString("hello world", 215,250);
 //      xloc+= xVel;
 //      yloc+= 2;
