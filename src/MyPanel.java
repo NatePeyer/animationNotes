@@ -3,13 +3,7 @@ import java.awt.*;
 
 public class MyPanel extends JPanel
 {
-//   private int xloc = 200;
-//    private int yloc = 200;
-//    private int xVel = 10;
-//    private int yVel = 10;
-//    private Ball myBall;
-//    private Ball myBall2;
-    private Ball[] myBalls = new Ball[20];
+    private Ball[] myBalls = new Ball[10];
 //    private int size = 200;
   public MyPanel()
   {
@@ -38,10 +32,10 @@ public class MyPanel extends JPanel
       }
       for(int i = 0; i < myBalls.length; i++)
       {
-          myBalls[i].moveBalls(this);
+          myBalls[i].moveBalls(this, myBalls, g);
       }
 
-      for(int i = 0 ; i < myBalls.length; i++)
+/*      for(int i = 0 ; i < myBalls.length; i++)
       {
           double x1 = myBalls[i].getX() + myBalls[i].getRadius();
           double y1 = myBalls[i].getY() + myBalls[i].getRadius();  
@@ -61,19 +55,11 @@ public class MyPanel extends JPanel
                   System.err.println("collision detected i = " + i + " j = " + j + " distance " + distanceBetweenPoints);
                   System.err.println("x1 " + x1 + " y1 " + y1 + " r1 " + myBalls[i].getRadius());
                   System.err.println("x2 " + x2 + " y2 " + y2 + " r2 " + myBalls[j].getRadius());
-                  //try
-                  //{
-                  //  Thread.sleep(500);
-                  //}
-                  //  catch (InterruptedException e)
-                  //{
-                  //  System.out.println(e);
-                  // }
                   myBalls[i].bounceOff();
                   myBalls[j].bounceOff();
               }
           }
-      }
+      }*/
       //g.drawString("hello world", 215,250);
 //      xloc+= xVel;
 //      yloc+= 2;

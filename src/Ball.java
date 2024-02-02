@@ -44,7 +44,7 @@ public class Ball {
         g2.fillOval(x,y,size,size);
     }
 
-    public void moveBalls(JPanel panel)
+    public void moveBalls(JPanel panel, Ball[] myBalls, Graphics g)
     {
         x += xSpeed;
         if(x > panel.getWidth() - size)
@@ -72,11 +72,30 @@ public class Ball {
             ySpeed *= -1;
             ySpeed += (int)(Math.random() * 3 - 1);
         }
-        //if ((y > panel.getHeight() || y < 0) || (x > panel.getWidth() || x < 0))
-        //{
-        //    x = (int)(Math.random() * panel.getWidth());
-        //    y = (int)(Math.random() * panel.getHeight());
-        //}
+        for(int i = 0 ; i < myBalls.length; i++)
+        {
+            double x1 = myBalls[i].getX() + myBalls[i].getRadius();
+            double y1 = myBalls[i].getY() + myBalls[i].getRadius();
+            for(int j = i + 1; j < myBalls.length; j++)
+            {
+                double x2 = myBalls[j].getX() + myBalls[j].getRadius();
+                double y2 = myBalls[j].getY() + myBalls[j].getRadius();
+
+                double distanceBetweenPoints = Math.sqrt(Math.pow(x2 - x1, 2) + Math.pow(y2 - y1, 2));
+                distanceBetweenPoints = Math.abs(distanceBetweenPoints);
+
+                if(distanceBetweenPoints <= myBalls[i].getRadius() + myBalls[j].getRadius() + .5)
+                {
+                    g.setColor(Color.BLACK);
+                    g.drawLine((int)x1, (int)y1, (int)x2 , (int)y2);
+                    System.err.println("collision detected i = " + i + " j = " + j + " distance " + distanceBetweenPoints);
+                    System.err.println("x1 " + x1 + " y1 " + y1 + " r1 " + myBalls[i].getRadius());
+                    System.err.println("x2 " + x2 + " y2 " + y2 + " r2 " + myBalls[j].getRadius());
+                    myBalls[i].bounceOff();
+                    myBalls[j].bounceOff();
+                }
+            }
+        }
     }
 
     public int getX()
@@ -90,8 +109,10 @@ public class Ball {
     }
     public void bounceOff()
     {
+        x = x - xSpeed;
         xSpeed *= -1;
         xSpeed += (int)(Math.random() * 3 - 1);
+        y = y - ySpeed;
         ySpeed *= -1;
         ySpeed += (int)(Math.random() * 3 - 1);
     }
