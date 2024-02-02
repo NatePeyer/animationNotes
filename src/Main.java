@@ -8,6 +8,8 @@ public class Main {
         JFrame frame = new JFrame();
         frame.setSize(500,500);
         MyPanel panel = new MyPanel();
+        panel.setSize(500,500);
+        panel.generateBalls();
         JLabel label = new JLabel("The Balls Are Bouncing", SwingConstants.CENTER);
 
         panel.add(label);
