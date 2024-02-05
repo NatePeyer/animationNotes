@@ -86,8 +86,8 @@ public class Ball {
 
                 if(distanceBetweenPoints <= myBalls[i].getRadius() + myBalls[j].getRadius() + .5)
                 {
-                    g.setColor(Color.BLACK);
-                    g.drawLine((int)x1, (int)y1, (int)x2 , (int)y2);
+                    //g.setColor(Color.BLACK);
+                    //g.drawLine((int)x1, (int)y1, (int)x2 , (int)y2);
                     System.err.println("collision detected i = " + i + " j = " + j + " distance " + distanceBetweenPoints);
                     System.err.println("x1 " + x1 + " y1 " + y1 + " r1 " + myBalls[i].getRadius());
                     System.err.println("x2 " + x2 + " y2 " + y2 + " r2 " + myBalls[j].getRadius());
